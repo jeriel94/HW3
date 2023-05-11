@@ -4,7 +4,8 @@ class PlacesController < ApplicationController
   end
 
   def show
-
+    @place = Place.find_by({"id" => params["id"]})
+    @place = Place.where({"place_id"=> @place["id"]})
   end
 
   def new
